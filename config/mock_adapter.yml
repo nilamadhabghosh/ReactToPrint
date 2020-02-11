@@ -1,0 +1,67 @@
+default: &default
+  users:
+    - principal: bjones
+      first_name: Bob
+      last_name: Jones
+      consumer_id: 22fb3126-a281-40b6-b5a5-e576926b70e5
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: male
+      date_of_birth:
+        original: 1985-01-15
+    - principal: sdavid
+      first_name: David
+      last_name: Sloane
+      consumer_id: 4b557013-f86f-4709-a843-787a80e51718
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: female
+      date_of_birth:
+        original: 1967-02-05
+    - principal: sjones
+      first_name: Stephen
+      last_name: Jones
+      consumer_id: 19d5d01f-09fa-4e47-89a2-1bb2b2198018
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: male
+      date_of_birth:
+        original: 1990-11-25
+    - principal: jsauer
+      first_name: Joseph
+      last_name: Sauer
+      consumer_id: 8c8caaff-22e7-4784-98d9-d425af080296
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: male
+      date_of_birth:
+        original: 1980-04-02
+    - principal: pzeitler
+      first_name: P
+      last_name: Zeitler
+      consumer_id: edc23644-f5c0-4a27-8295-e07f2814b91f
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: female
+      date_of_birth:
+        original: 1991-11-11
+    - principal: bebe
+      first_name: Bebe
+      last_name: Jones
+      consumer_id: 8d950717-746c-4fac-a9a0-c56498d17f95
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: female
+      date_of_birth:
+        original: 1942-06-22
+    - principal: proxima1
+      first_name: Test
+      last_name: User
+      consumer_id: 3901d777-588b-4b60-bef0-441095a0cfd5
+      client_id: 98513259-e344-4526-89b1-afc4d45a1e18
+      gender: female
+      date_of_birth:
+        original: 1999-01-11
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

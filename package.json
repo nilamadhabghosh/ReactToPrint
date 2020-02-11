@@ -1,0 +1,46 @@
+{
+  "name": "ImmunzationReport",
+  "private": true,
+  "scripts": {
+    "lint": "app-sdk lint",
+    "test": "app-sdk test",
+    "lint-fix": "app-sdk lint --fix"
+  },
+  "dependencies": {
+    "@healtheintent/app-sdk": "^4.2.0",
+    "@rails/webpacker": "3.5",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "prop-types": "^15.5.8",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.9.0",
+    "react-print": "^1.3.1",
+    "react-router-dom": "^4.2.2",
+    "react-to-print": "^2.5.1",
+    "terra-application-layout": "^4.7.0",
+    "terra-base": "^4.3.0",
+    "terra-button": "^3.31.0",
+    "terra-clinical-detail-view": "^3.14.0",
+    "terra-clinical-label-value-view": "^3.14.0",
+    "terra-content-container": "^3.23.0",
+    "terra-disclosure-manager": "^4.16.0",
+    "terra-spacer": "^3.21.0",
+    "terra-table": "^4.1.0"
+  },
+  "stylelint": {
+    "extends": "./node_modules/@healtheintent/app-sdk/config/stylelint/stylelintrc.js"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/@healtheintent/app-sdk/config/eslint/eslintrc.js"
+  },
+  "translations": {
+    "locales": [
+      "en"
+    ]
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

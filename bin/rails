@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+APP_PATH = File.expand_path('../config/application', __dir__)
+require_relative '../config/boot'
+# require 'rails/commands'
+
+# Change default port of development server, see http://stackoverflow.com/questions/18103316
+require 'rails/commands'
+module DefaultOptions
+  def default_options
+    super.merge!(Port: 3001)
+  end
+end
+Rails::Server.send(:prepend, DefaultOptions)

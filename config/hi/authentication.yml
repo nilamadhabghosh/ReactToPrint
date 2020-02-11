@@ -1,0 +1,20 @@
+default: &default
+  base_domain_length: <%= (ENV['BASE_DOMAIN_LENGTH'] || '1').to_i %>
+
+
+local:
+  <<: *default
+  user_classes:
+    - mock
+
+development:
+  <<: *default
+  user_classes:
+    - mock
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+

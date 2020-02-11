@@ -1,0 +1,4 @@
+# Docker image for local development
+FROM docker.cernerrepos.net/healtheintent/ruby:2.6-build
+RUN bundle install --jobs 4 --with development
+RUN yarn install

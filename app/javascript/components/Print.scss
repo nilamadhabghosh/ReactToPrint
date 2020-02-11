@@ -1,0 +1,42 @@
+.print-setting {
+  @page {
+    display: block;
+    margin: 5mm;
+    min-height: 100%;
+  }
+
+  body {
+    display: block;
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.print-view {
+  display: none;
+  @media print {
+    display: block;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.dont-print {
+  @media print {
+    display: none;
+  }
+}
+
+.border {
+  border-bottom: 10px solid blue;
+}
+
+.detail-view {
+  border: 100px solid blue;
+}

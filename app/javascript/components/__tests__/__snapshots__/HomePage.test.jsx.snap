@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> renders correctly 1`] = `
+<Spacer
+  isInlineBlock={false}
+  marginBottom="none"
+  marginLeft="none"
+  marginRight="none"
+  marginTop="none"
+  padding="medium"
+  paddingBottom="none"
+  paddingLeft="none"
+  paddingRight="none"
+  paddingTop="none"
+>
+  <h1>
+    HelloWorld
+  </h1>
+</Spacer>
+`;

@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug rails",
+      "type": "Ruby",
+      "request": "attach",
+      "remotePort": "1234",
+      "remoteHost": "127.0.0.1",
+      "remoteWorkspaceRoot": "/opt/app",
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "debug",
+      "postDebugTask": "stop local containers",
+      "showDebuggerOutput": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug JS Tests",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/app-sdk",
+      "args": [
+        "--inspect-brk",
+        "test",
+        "--debug"
+      ],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Start Rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": ["server"]
+    },
+    {
+      "name": "Start Webpack dev server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/webpack-dev-server",
+      "debuggerPort": "1235",
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./~/*": "${webRoot}/node_modules/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:////*": "${webRoot}/app/javascript/components/*",
+        "webpack:///app/javascript/*": "${webRoot}/app/javascript/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack Debug",
+      "configurations": [
+        "Start Rails server",
+        "Start Webpack dev server",
+        "Launch Chrome"
+      ]
+    }
+  ]
+}

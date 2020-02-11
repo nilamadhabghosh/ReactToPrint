@@ -1,0 +1,15 @@
+default: &default
+  auditor: <%= ENV['AUDITOR'] || 'AsynchronousAuditor' %>
+  base_uri: <%= ENV['AUDITING_BASE_URI'] || 'https://audit-api.devcernercentral.com' %>
+  oauth_key: <%= ENV['OAUTH_KEY'] %>
+  oauth_secret: <%= ENV['OAUTH_SECRET'] %>
+  oauth_access_token_url: <%= ENV['OAUTH_ACCESS_TOKEN_URL'] || 'https://api.devcernercare.com/oauth/access' %>
+
+development:
+  auditor: LoggingAuditor
+
+test:
+  auditor: MemoryAuditor
+
+production:
+  <<: *default

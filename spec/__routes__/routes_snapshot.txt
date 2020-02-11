@@ -1,0 +1,17 @@
+[streetcar-performance] Config file not found at streetcar/performance using default values.
+    Prefix Verb URI Pattern      Controller#Action
+hi_checkup      /                Hi::Checkup::Engine
+hi_app_sdk      /                Hi::AppSdk::Engine
+      root GET  /                home#index
+           GET  /*path(.:format) home#index
+
+Routes for Hi::Checkup::Engine:
+                basic_health GET  /meta/availability(.:format)                               hi/checkup/checkup#basic_health {:format=>/(json|html)/}
+              primary_health GET  /meta/health(.:format)                                     hi/checkup/checkup#primary_health {:format=>/(json|html)/}
+           diagnostic_health GET  /meta/health/diagnostic(.:format)                          hi/checkup/checkup#diagnostic_health {:format=>/(json|html)/}
+          dependency_listing GET  /meta/health/diagnostic/dependencies(.:format)             hi/checkup/checkup#dependency_listing {:format=>/(json|html)/}
+           dependency_health GET  /meta/health/diagnostic/dependencies/:dependency(.:format) hi/checkup/checkup#dependency_health {:format=>/(json|html)/}
+deprecated_dependency_health GET  /meta/health/diagnostic/dependency/:dependency(.:format)   hi/checkup/checkup#deprecated_dependency_health {:format=>/(json|html)/}
+
+Routes for Hi::AppSdk::Engine:
+csp_violation_report POST /csp-violation-report(.:format) hi/app_sdk/content_security_policy#report

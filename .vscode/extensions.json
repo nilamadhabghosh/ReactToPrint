@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "rebornix.ruby",
+    "PeterJausovec.vscode-docker",
+    "mikestead.dotenv"
+  ]
+}

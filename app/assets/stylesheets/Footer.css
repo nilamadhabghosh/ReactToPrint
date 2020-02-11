@@ -1,0 +1,7 @@
+.footer p {
+    font-size: 13px;
+    position: fixed;
+    left: 15px;
+    bottom: 0;
+    width: 100%;
+}

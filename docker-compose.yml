@@ -1,0 +1,39 @@
+version: '3.6'
+services:
+  # run rails with hot-reloading of both ruby and javascript
+  local:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    command: sh -c 'rm -rf ./tmp && bin/server'
+    env_file: local.env
+    volumes:
+      - ./app:/opt/app/app
+      - ./lib:/opt/app/lib
+    ports:
+      - 3001:3001
+
+  # run rails with rdebug so debugger can be attached using an IDE
+  debug:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    command: sh -c 'rm -rf ./tmp && bundle exec rdebug-ide --host 0.0.0.0 --port 1234 --dispatcher-port 26162 -- bin/rails s -b 0.0.0.0'
+    env_file: local.env
+    volumes:
+      - ./app:/opt/app/app
+      - ./lib:/opt/app/lib
+    ports:
+      - 3001:3001
+      # ports for debugging
+      - 1234:1234
+      - 26162:26162
+
+  # run the image that will be used in non-local environments
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    env_file: prod.env

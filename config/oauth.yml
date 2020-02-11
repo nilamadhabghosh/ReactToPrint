@@ -1,0 +1,20 @@
+
+# Configuration for Cloud Service Oauth.
+# Please change as necessary for each environment.
+#
+# https://github.cerner.com/hi-infra/cloud_service_oauth/blob/master/README.md
+local: &base
+  oauth_key: c21c2089-3698-4968-84f3-24c83470db8c
+  oauth_secret: ZuJkKI_P-MyrVQ7KJgSGgCZdF0f8s_4q
+  oauth_access_token_url: https://api.sandboxcernercare.com/oauth/access
+
+development:
+  <<: *base
+
+test:
+  <<: *base
+
+production:
+  oauth_key: <%= ENV['OAUTH_KEY'] %>
+  oauth_secret: <%= ENV['OAUTH_SECRET'] %>
+  oauth_access_token_url: <%= ENV['OAUTH_ACCESS_TOKEN_URL'] %>

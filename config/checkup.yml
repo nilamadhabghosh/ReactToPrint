@@ -1,0 +1,17 @@
+default: &default
+  whitelist: 
+  primary:
+  - oauth
+    
+  - { name: client_directory, type: service }
+  - { name: client_solution_configuration, type: service }
+  - { name: tenant, type: service }
+    
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

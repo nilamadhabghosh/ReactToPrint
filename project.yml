@@ -1,0 +1,44 @@
+name: ImmunzationReport
+group_id: com.cerner.pophealth
+doc: tomdoc
+test: rake
+artifact_id: ImmunzationReport
+version: 0.1.0.SNAPSHOT
+package:
+  type: rails
+  files:
+    - api/**/*.yml
+github:
+  project_url: https://github.cerner.com/healtheintent/ImmunzationReport
+  previous_version: 0.0.0
+repository:
+  id: cerner-main-release
+  url: http://repo.release.cerner.corp/main/repo/
+site_repository:
+  id: cerner-release-main-site
+  url: http://repo.release.cerner.corp/main/site/
+snapshot_repository:
+  id: pophealth-snapshot
+  url: http://repo.snapshot.cerner.corp/nexus/content/repositories/pophealth-snapshot/
+snapshot_site_repository:
+  id: pophealth-snapshot-site
+  url: http://repo.snapshot.cerner.corp/nexus/content/repositories/pophealth-snapshot-site/
+philter:
+  linters:
+    - ruby
+  ruby:
+    exclusions:
+      - db/**/*
+      - vendor/**/*
+      - target/**/*
+      - node_modules/**/*
+  errors_fail_build: true
+valinor:
+  organization: healtheintent
+  repository: docker.cernerrepos.net
+  labels:
+    enabled: true
+    prefix: com.cerner.
+  output:
+    verbose: true
+    color: true

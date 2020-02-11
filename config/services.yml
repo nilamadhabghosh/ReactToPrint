@@ -1,0 +1,22 @@
+# config/services.yml
+
+default: &default
+  open_timeout_default: '6'
+  read_timeout_default: '6'
+  retry_on_default: ['408', '502', '503', '504']
+  retries_default: '2'
+  client_solution_configuration_service_uri: http://services.staginghealtheintent.net/client-solution-configuration-service
+  client_directory_service_uri: http://services.staginghealtheintent.net/client-directory-service
+  tenant_service_uri: https://tenants.us.staginghealtheintent.net
+
+
+development:
+  <<: *default
+
+
+test:
+  <<: *default
+
+
+production:
+  <<: *default
