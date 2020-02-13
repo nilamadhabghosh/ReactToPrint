@@ -23,11 +23,14 @@ const Example = () => {
           />
         )}
         content={() => componentRef.current}
-        // pageStyle={cx("detail-view")}
-        // removeAfterPrint={false}
+        pageStyle={cx("print-view")}
+        // pageStyle="@page { size: auto; margin: 0mm; } @media print { body { -webkit-print-color-adjust: exact; padding: 40px !important} }"
+        removeAfterPrint={false}
         // copyStyles
       />
-      <DetailViewDivided ref={componentRef} />
+      <div>
+        <DetailViewDivided ref={componentRef} />
+      </div>
     </div>
   );
 };

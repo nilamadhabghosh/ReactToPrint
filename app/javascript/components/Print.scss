@@ -20,6 +20,7 @@
   display: none;
   @media print {
     display: block;
+    border: 10px solid red;
   }
 }
 
@@ -38,5 +39,7 @@
 }
 
 .detail-view {
-  border: 100px solid blue;
+  @media print {
+    border: 100px solid blue;
+  }
 }

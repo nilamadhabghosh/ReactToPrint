@@ -1,4 +1,21 @@
 .detailview {
-  border: 10px solid red;
-  padding-left: 10px;
+  @media print {
+    border: 10px solid red;
+  }
+}
+
+.detailview h2 {
+  text-align: center;
+}
+
+#orglogo {
+  width: 240px;
+  height: 240px;
+}
+
+#orgaddress {
+  margin-top: 10px;
+  float: right;
+  display: block;
+  font-style: normal;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import React from "react";
 import Table from "terra-table";
 import "../../assets/stylesheets/ComponentToPrint.css";
@@ -14,14 +15,18 @@ export default class ComponentToPrint extends React.Component {
         dividerStyle="horizontal"
         headerData={{
           cells: [
-            { id: "header-name", key: "name", children: "Name" },
-            { id: "header-address", key: "address", children: "Address" },
             {
-              id: "header-phone_number",
-              key: "phone_number",
-              children: "Phone Number"
+              id: "header-date-of-vaccination",
+              key: "date-of-vaccination",
+              children: "Date of Vaccination"
+            },
+            { id: "header-age", key: "age", children: "Age" },
+            {
+              id: "header-organization",
+              key: "organization",
+              children: "Organization"
             }
-          ]
+          ],
         }}
         bodyData={[
           {

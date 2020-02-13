@@ -26,6 +26,7 @@
     "terra-clinical-label-value-view": "^3.14.0",
     "terra-content-container": "^3.23.0",
     "terra-disclosure-manager": "^4.16.0",
+    "terra-image": "^3.22.0",
     "terra-spacer": "^3.21.0",
     "terra-table": "^4.1.0"
   },
